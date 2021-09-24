@@ -23,33 +23,38 @@ console.log(resultThree);
 let resultFour = chosenItem(formOfEntertainment)
 console.log(resultFour);
 
+let finalResult = resultOne + ', ' + resultTwo + ', ' + resultThree + ', ' + resultFour
+
+
 let continueLoop = true; //this will keep the while loop going.
 let confirmed = 'yes'
 let denied = 'no'
 let newConfirmed = 'confirm'
 while (continueLoop === true){
-    let happyCustomer = prompt('Type yes to confirm your day trip. Type no if you want to try again. Type confirm to accept your newly generated day trip')
+    let happyCustomer = prompt('Type yes to confirm your day trip. Type no if you want to try again.')
     if (happyCustomer === confirmed){
-        console.log('Here is your day trip: ' + resultOne + ', ' + resultTwo + ', ' + resultThree + ', ' + resultFour)
+        console.log('Here is your day trip: ' + finalResult)
         continueLoop = false;
     }
     else if(happyCustomer === denied){
-        let resultOne = chosenItem(destinations);
+        resultOne = chosenItem(destinations);
         console.log(resultOne);
-        let resultTwo = chosenItem(restuarants);
+        resultTwo = chosenItem(restuarants);
         console.log(resultTwo);
-        let resultThree = chosenItem(modeOfTransportation);
+        resultThree = chosenItem(modeOfTransportation);
         console.log(resultThree);
-        let resultFour = chosenItem(formOfEntertainment);
+        resultFour = chosenItem(formOfEntertainment);
         console.log(resultFour);
-        console.log('Here is your confirmed day trip: ' + resultOne + ', ' + resultTwo + ', ' + resultThree + ', ' + resultFour)
+        let finalNewResult = resultOne + ', ' + resultTwo + ', ' + resultThree + ', ' + resultFour
+        console.log('Here is your new day trip: ' + finalNewResult)
+        happyCustomer = prompt('Please enter confirm to save your new trip. If you do not like this trip, enter no to return to previous screen.')
+        if (happyCustomer == newConfirmed){
+            console.log('Here is your confirmed day trip: ' + finalNewResult)
+            continueLoop = false;
         }
-    
-    else if(happyCustomer === newConfirmed){
-        continueLoop = false;
-    }
+        }
     else {
         continueLoop = false;
     }
-
+    
 }
