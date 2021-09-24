@@ -23,3 +23,33 @@ console.log(resultThree);
 let resultFour = chosenItem(formOfEntertainment)
 console.log(resultFour);
 
+let continueLoop = true; //this will keep the while loop going.
+let confirmed = 'yes'
+let denied = 'no'
+let newConfirmed = 'confirm'
+while (continueLoop === true){
+    let happyCustomer = prompt('Type yes to confirm your day trip. Type no if you want to try again. Type confirm to accept your newly generated day trip')
+    if (happyCustomer === confirmed){
+        console.log('Here is your day trip: ' + resultOne + ', ' + resultTwo + ', ' + resultThree + ', ' + resultFour)
+        continueLoop = false;
+    }
+    else if(happyCustomer === denied){
+        let resultOne = chosenItem(destinations);
+        console.log(resultOne);
+        let resultTwo = chosenItem(restuarants);
+        console.log(resultTwo);
+        let resultThree = chosenItem(modeOfTransportation);
+        console.log(resultThree);
+        let resultFour = chosenItem(formOfEntertainment);
+        console.log(resultFour);
+        console.log('Here is your confirmed day trip: ' + resultOne + ', ' + resultTwo + ', ' + resultThree + ', ' + resultFour)
+        }
+    
+    else if(happyCustomer === newConfirmed){
+        continueLoop = false;
+    }
+    else {
+        continueLoop = false;
+    }
+
+}
