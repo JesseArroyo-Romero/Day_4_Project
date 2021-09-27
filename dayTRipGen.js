@@ -45,7 +45,7 @@ while (continueLoop === true){
         let finalNewResult = resultOne + ', ' + resultTwo + ', ' + resultThree + ', ' + resultFour
         console.log('Here is your new day trip: ' + finalNewResult)
         happyCustomer = prompt('Please enter confirm to save your new trip. If you do not like this trip, enter no to return to previous screen.')
-        if (happyCustomer == 'confirmed'){
+        if (happyCustomer == 'confirm'){
             console.log('Here is your confirmed day trip: ' + finalNewResult)
             continueLoop = false;
         }
